@@ -9,9 +9,36 @@ var infowindows = [];
 // Map Initialization //
 ////////////////////////
 function initMap(){
+  var echoMapType = new google.maps.StyledMapType([
+      {
+        stylers: [
+          {hue: '#0DA550'},
+          {visibility: 'simplified'},
+          {gamma: 0.5},
+          {weight: 0.5}
+        ]
+      },
+      {
+        elementType: 'labels',
+        stylers: [{visibility: 'off'}]
+      },
+      {
+        featureType: 'water',
+        stylers: [{color: '#0DA550'}]
+      }
+    ], {
+      name: 'Echo Style'
+  });
+  var customMapTypeId = 'echo_style';
 
-  map = new google.maps.Map(document.getElementById('map'), {zoom: 14, center: chiTown, zoomControl: true});
+  map = new google.maps.Map(document.getElementById('map'),
+    {zoom: 14,
+     center: chiTown,
+     zoomControl: true,
+     mapTypeId: 'echo_style'});
+  map.mapTypes.set('echo_style', echoMapType)
   console.log(map);
+
 
   if(!isNaN(redirectLng))
   { //This sets the map's center to the redirect pin's location

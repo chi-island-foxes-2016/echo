@@ -12,6 +12,12 @@
         <%= image_tag('google.png', :class=>"google responsive-img") %>
       </div>
       <div id="right-menu">
+        <div id="river_song" class="col s4 offset-s2">
+          <% unless @pins[0] == nil %>
+            <h6> Recent Posts</h6>
+            <%= react_component("Comment", {:pins => @pins}) %>
+          <% end %>
+        </div>
         <%= render template: "layouts/_sidebar"  %>
       </div>
       <a href="#" id="left-menu-button"><i class="medium material-icons">perm_identity</i></a>

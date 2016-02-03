@@ -41,13 +41,17 @@ html, body {
   pointer-events: all;
 }
 
+#overlay a {
+  color: black;
+}
+
 #left-menu {
   position: absolute;
   top:0;
   left:0;
   bottom:0;
   width: 300px;
-  background: blue;
+  background: #6E726B;
   display: none;
 }
 
@@ -57,7 +61,7 @@ html, body {
   right:0;
   bottom:0;
   width: 300px;
-  background: red;
+  background: #6E726B;
   display: none;
 }
 
